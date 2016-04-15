@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Card or more in a row"
+            android:textSize="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:text="3 cards"
+            android:id="@+id/chkbox_ThreeCardsTeamA"
+            android:layout_alignBaseline="@+id/chkbox_FiveCardsTeamA"
+            android:layout_alignBottom="@+id/chkbox_FiveCardsTeamA"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:layout_toEndOf="@+id/linearLayout" />
+
+        <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="4 cards"
+            android:id="@+id/chkbox_FourCardsTeamA"
+            android:layout_above="@+id/chkbox_FiveCardsTeamA"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:layout_toEndOf="@+id/linearLayout" />
+
+        <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="5 cards"
+        android:id="@+id/chkbox_FiveCardsTeamA"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayoutB"
+            android:layout_alignTop="@+id/linearLayout"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:text="3 cards"
+                android:id="@+id/chkbox_ThreeCardsTeamB"
+               />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:text="4 cards"
+                android:id="@+id/chkbox_FourCardsTeamB"
+                android:layout_above="@+id/chkbox_FiveCardsTeamA"
+                android:layout_toRightOf="@+id/linearLayout"
+                android:layout_toEndOf="@+id/linearLayout" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:text="5 cards"
+                android:id="@+id/chkbox_FiveCardsTeamB"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:id="@+id/btnBonusGo"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.02" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bellote ?"
+            android:gravity="end"
+            android:textSize="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:text="Bellote"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/chkbox_BelloteTeamA"
+            android:clickable="true"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:text="Bellote"
+            android:id="@+id/chkbox_BelloteTeamB"
+            android:layout_alignTop="@+id/chkbox_BelloteTeamA"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/checkBox4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 cards of the same rank"
+                android:textSize="25dp"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout3">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 A10KQs"
+            android:textSize="24dp"
+            android:id="@+id/chkbox_FourA10KQs_TeamA"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+           />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 9s"
+            android:id="@+id/chkbox_Four9s_TeamA"
+            android:textSize="24dp"
+            android:layout_above="@+id/fourA10KQs"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+            <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 Js"
+            android:id="@+id/chkbox_FourJs_TeamA"
+            android:textSize="24dp"
+            android:layout_above="@+id/chkbox_Four9J_TeamB"
+            android:layout_alignRight="@+id/chkbox_Four9s_TeamA"
+            android:layout_alignEnd="@+id/chkbox_Four9J_TeamB" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignTop="@+id/linearLayout3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 A10KQs"
+                android:textSize="24dp"
+                android:id="@+id/chkbox_FourA10KQs_TeamB"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 9s"
+                android:id="@+id/chkbox_Four9s_TeamB"
+                android:textSize="24dp"
+                android:layout_above="@+id/chkbox_FourA10KQs_TeamB"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Js"
+                android:id="@+id/chkbox_FourJs_TeamB"
+                android:textSize="24dp"
+                android:layout_above="@+id/chkbox_Four9J_TeamB"
+                android:layout_alignRight="@+id/chkbox_Four9J_TeamB"
+                android:layout_alignEnd="@+id/chkbox_Four9J_TeamB" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

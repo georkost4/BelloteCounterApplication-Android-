@@ -1,22 +1,38 @@
 package com.house.sora.bellotecounter.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+
 import com.house.sora.bellotecounter.Controller.Bonus;
 
 /**
  * Created by SoRa on 5/4/2016.
  */
-public class modelTeam
+public class modelTeam implements Parcelable
 {
     String name;
     int score;
-    Bonus bonus;
+    int bonus;
+    Boolean bidded;
 
-    public modelTeam(String name, int score, Bonus bonus) {
+
+    public modelTeam(String name, int score, Bonus bonus,Boolean bidded) {
         this.name = name;
         this.score = score;
-        this.bonus = bonus;
+        this.bonus = getValue(bonus);
+        this.bidded = bidded;
+    }
+    public modelTeam() {this.bonus = 0;}
+
+
+    public Boolean getBidded() {
+        return bidded;
     }
 
+    public void setBidded(Boolean bidded) {
+        this.bidded = bidded;
+    }
 
     public int getValue(Bonus bonus)
     {
@@ -42,6 +58,7 @@ public class modelTeam
                 break;
             case FOUR_A10KQ:
                 returnedVal = 100;
+
                 break;
         }
 
@@ -64,10 +81,21 @@ public class modelTeam
     }
 
     public int getBonus() {
-        return this.getValue(this.bonus);
+        return this.bonus;
     }
 
     public void setBonus(Bonus bonus) {
-        this.bonus = bonus;
+        Log.d("InideModel","added");
+        this.bonus += getValue(bonus);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }
