@@ -1,5 +1,6 @@
 package com.house.sora.bellotecounter.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -32,14 +33,24 @@ public class BonusView extends AppCompatActivity
 
         initComponents();
 
-        if(savedInstanceState == null)
-        {
-            TeamA = new modelTeam();
-            TeamB = new modelTeam();
-            Log.d("Debug","BAD BAD ROBOT");
-            Toast.makeText(this,"Ba ROBOOTTTT",Toast.LENGTH_LONG).show();
-        }
+        TeamA = new modelTeam();
+        TeamB = new modelTeam();
+        Log.d("Debug","BAD BAD ROBOT");
+        Toast.makeText(this,"Ba ROBOOTTTT",Toast.LENGTH_LONG).show();
 
+
+
+    }
+
+    @Override
+    public void finish()
+    {
+        Intent mIntent = new Intent();
+        mIntent.putExtra("teamA",TeamA);
+        mIntent.putExtra("teamB",TeamB);
+        mIntent.putExtra("putses","koppsia");
+        setResult(1,mIntent);
+        super.finish();
     }
 
     @Override
@@ -49,7 +60,7 @@ public class BonusView extends AppCompatActivity
         TeamA = savedInstanceState.getParcelable("TeamA");
         TeamB = savedInstanceState.getParcelable("TeamB");
         Log.d("Debug","GG");
-        Toast.makeText(this,"Loaded",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Loaded",Toast.LENGTH_SHORT).show();
 
 
     }
@@ -122,6 +133,13 @@ public class BonusView extends AppCompatActivity
         }
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        Toast.makeText(getApplicationContext(),"You havent selected bonus",Toast.LENGTH_SHORT).show();
+        super.onBackPressed();
+    }
+
     private class btnGoOnClickHandler implements View.OnClickListener {
         @Override
         public void onClick(View v)
@@ -150,6 +168,8 @@ public class BonusView extends AppCompatActivity
             Log.d("DEBUG","SUM UP:");
             Log.d("DEBUG","Team A score:"+TeamA.getBonus());
             Log.d("DEBUG","Team B score:"+TeamB.getBonus());
+
+            finish();
 
         }
     }

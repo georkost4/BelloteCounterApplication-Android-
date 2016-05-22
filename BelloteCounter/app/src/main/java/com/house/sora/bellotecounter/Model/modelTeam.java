@@ -81,12 +81,24 @@ public class modelTeam implements Parcelable
     }
 
     public int getBonus() {
-        return this.bonus;
+        return bonus;
     }
 
     public void setBonus(Bonus bonus) {
         Log.d("InideModel","added");
         this.bonus += getValue(bonus);
+    }
+    public void setBonus(int bonus) {
+        Log.d("InideModel","added");
+        this.bonus = bonus;
+    }
+
+    protected modelTeam(Parcel in) {
+        name = in.readString();
+        score = in.readInt();
+        bonus = in.readInt();
+        byte biddedVal = in.readByte();
+        bidded = biddedVal == 0x02 ? null : biddedVal != 0x00;
     }
 
     @Override
@@ -96,6 +108,26 @@ public class modelTeam implements Parcelable
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeString(name);
+        dest.writeInt(score);
+        dest.writeInt(bonus);
+        if (bidded == null) {
+            dest.writeByte((byte) (0x02));
+        } else {
+            dest.writeByte((byte) (bidded ? 0x01 : 0x00));
+        }
     }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<modelTeam> CREATOR = new Parcelable.Creator<modelTeam>() {
+        @Override
+        public modelTeam createFromParcel(Parcel in) {
+            return new modelTeam(in);
+        }
+
+        @Override
+        public modelTeam[] newArray(int size) {
+            return new modelTeam[size];
+        }
+    };
 }

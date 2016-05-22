@@ -181,6 +181,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/relativeLayout3">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutA"
+            android:orientation="vertical">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -188,14 +194,13 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="TEAM A"
             android:id="@+id/textViewTeamA"
-            android:layout_marginRight="45dp"
-            android:layout_marginEnd="45dp"
+            android:layout_gravity="center"
             android:layout_alignParentTop="true"
             android:layout_alignRight="@+id/listViewA"
             android:layout_alignEnd="@+id/listViewA" />
 
         <ListView
-            android:layout_width="160dp"
+            android:layout_width="164dp"
             android:layout_height="wrap_content"
             android:id="@+id/listViewA"
             android:layout_below="@+id/textViewTeamA"
@@ -203,29 +208,39 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@+id/listViewB" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="TEAM B"
+            android:id="@+id/textViewTeamB"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/relativeLayout3"
+            android:layout_alignEnd="@+id/relativeLayout3"
+            android:layout_gravity="center" />
 
         <ListView
             android:background="#852ab6"
-            android:layout_width="180dp"
+            android:layout_width="164dp"
             android:layout_height="wrap_content"
             android:id="@+id/listViewB"
             android:layout_alignTop="@+id/listViewA"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
+        </LinearLayout>
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="TEAM B"
-        android:id="@+id/textViewTeamB"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/relativeLayout3"
-        android:layout_alignEnd="@+id/relativeLayout3"
-        android:layout_marginRight="50dp"
-        android:layout_marginEnd="50dp" />
+
 
 
 </RelativeLayout>
